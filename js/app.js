@@ -82,7 +82,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                 });
         };
 
-        $scope.deleteComment = function (comment) {
+        /*$scope.deleteComment = function (comment) {
             $http.delete(urlBeginning + '/' + comment.objectId, comment)
                 .success(function(respData) {
                     $scope.refreshComments();
@@ -91,5 +91,5 @@ angular.module('CommentApp', ['ui.bootstrap'])
                     $scope.errorMessage = err;
                     console.log(err);
                 });
-        };
+        };*/
     });
