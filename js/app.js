@@ -93,3 +93,15 @@ angular.module('CommentApp', ['ui.bootstrap'])
                 });
         };*/
     });
+
+$(document).ready(function() {
+    $.get('../lib/adjectives.txt', function(data) {
+        var adjectiveLines = data.split('\n');
+        console.log(adjectiveLines);
+    });
+    $.get('../lib/nouns.txt', function(data) {
+        var nounLines = data.split('\n');
+    });
+});
+
+
