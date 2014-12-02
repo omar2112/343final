@@ -52,36 +52,71 @@
                 </form>
             </section>
 
-            <section>
-                <h2>Comments <img ng-show="loading" id="ajax-loader" src="img/ajax-spinner-sm.gif" alt="loading comments"/></h2>
-                <p ng-show="comments.length == 0">No comments yet. Be the first to review this!</p>
-                <table class="table table-striped" ng-show="comments.length > 0">
-                    <thead>
-                        <tr>
-                            <th id="user-name">Name</th>
-                            <th id="comment-title-th">Title</th>
-                            <th id="comment">Comment</th>
-                            <!--<th id="rating">Rating</th>-->
-                            <th id="score">Score</th>
-                            <!--<th id="delete">X?</th>-->
-                        </tr>
-                    </thead>
-                    <tr ng-repeat="comment in comments | orderBy : sortCol : !sortReverse">
-                        <td>{{comment.name}}</td>
-                        <td>{{comment.title}}</td>
-                        <td>{{comment.comment}}</td>
-                        <!--<td><rating max="5" ng-model="comment.rating" ng-change="updateComment(comment)" readOnly="comment.score != null"></rating></td>-->
-                        <td>
+            <!--<section>-->
+                <!--<h2>Comments <img ng-show="loading" id="ajax-loader" src="img/ajax-spinner-sm.gif" alt="loading comments"/></h2>-->
+                <!--<p ng-show="comments.length == 0">No comments yet. Be the first to review this!</p>-->
+                <!--<table class="table table-striped" ng-show="comments.length > 0">-->
+                    <!--<thead>-->
+                        <!--<tr>-->
+                            <!--<th id="user-name">Name</th>-->
+                            <!--<th id="comment-title-th">Title</th>-->
+                            <!--<th id="comment">Comment</th>-->
+                            <!--&lt;!&ndash;<th id="rating">Rating</th>&ndash;&gt;-->
+                            <!--<th id="score">Score</th>-->
+                            <!--&lt;!&ndash;<th id="delete">X?</th>&ndash;&gt;-->
+                        <!--</tr>-->
+                    <!--</thead>-->
+                    <!--<tr ng-repeat="comment in comments | orderBy : sortCol : !sortReverse">-->
+                        <!--<td>{{comment.name}}</td>-->
+                        <!--<td>{{comment.title}}</td>-->
+                        <!--<td>{{comment.comment}}</td>-->
+                        <!--&lt;!&ndash;<td><rating max="5" ng-model="comment.rating" ng-change="updateComment(comment)" readOnly="comment.score != null"></rating></td>&ndash;&gt;-->
+                        <!--<td>-->
+                            <!--{{comment.score || 0}}-->
+                            <!--<span class="glyphicon glyphicon-thumbs-up" ng-click="changeScore(comment, 1)"><a href=""></a></span>-->
+                            <!--<span class="glyphicon glyphicon-thumbs-down" ng-click="changeScore(comment, -1)"><a href=""></a></span>-->
+                        <!--</td>-->
+                        <!--<td>-->
+                            <!--&lt;!&ndash;<span class="glyphicon glyphicon-remove-circle" ng-click="deleteComment(comment)"></span>&ndash;&gt;-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                <!--</table>-->
+            <!--</section>-->
+
+            <!--background-color: #ffffff;-->
+
+            <!-- POST -->
+            <div class="post" ng-repeat="comment in comments">
+                <div class="wrap-ut pull-left">
+                    <div class="userName pull-left">
+                        {{comment.name}}
+                    </div>
+                    <div class="commentBody pull-left">
+                        <h3>{{comment.title}}</h3>
+                        <p>{{comment.comment}}</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+
+                <div class="commentInfo pull-left">
+                    <div class="scores">
+                        <div class="commentScore">
                             {{comment.score || 0}}
-                            <span class="glyphicon glyphicon-thumbs-up" ng-click="changeScore(comment, 1)"><a href=""></a></span>
-                            <span class="glyphicon glyphicon-thumbs-down" ng-click="changeScore(comment, -1)"><a href=""></a></span>
-                        </td>
-                        <td>
-                            <!--<span class="glyphicon glyphicon-remove-circle" ng-click="deleteComment(comment)"></span>-->
-                        </td>
-                    </tr>
-                </table>
-            </section>
+                            <div class="mark"></div>
+                        </div>
+                    </div>
+                    <div class="vote">
+                        <span class="glyphicon glyphicon-thumbs-up" ng-click="changeScore(comment, 1)"><a href=""></a></span>
+                        <span class="glyphicon glyphicon-thumbs-down" ng-click="changeScore(comment, -1)"><a href=""></a></span>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- POST -->
+
+
+
 
         </main>
 

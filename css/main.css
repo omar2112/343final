@@ -1,8 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500);
 
 body {
-    font-family: 'Ubuntu', 'Helvetica Neue', 'Helvetica', sans-serif;
+    font-family: 'Open Sans Light', 'Ubuntu', 'Helvetica Neue', 'Helvetica', sans-serif;
     font-weight: 400;
+	background-color: #C1CDCD;
 }
 
 label {
@@ -16,7 +17,93 @@ rating {
 }
 */
 
+
 h2 {
 	font-size: 40px;
 	font-weight: 200;
 }
+
+
+/*--- Post --*/
+.post {
+	background: rgba(253, 253, 240, 0.8);=
+	border-radius: 2px;
+	box-shadow: 0 1px 2px #c9cccd;
+	margin-bottom: 20px;
+}
+
+.post .wrap-ut {
+	width: 85%;
+}
+
+.post .userName {
+	width: 15%;
+	padding: 20px 0 15px 15px;
+}
+
+.post .commentBody {
+	width: 85%;
+	padding-right: 30px;
+	padding-top: 20px;
+	padding-bottom: 15px;
+
+	color: #989c9e;
+	font-size: 14px;
+	font-family: 'Open Sans Light', sans-serif;
+	line-height: 25px;
+}
+
+.post .commentInfo {
+	width: 15%;
+	border-left: solid 1px #f1f1f1;
+}
+
+.post h3 {
+	color: #363838;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.post .scores {
+	border-bottom: solid 1px #f1f1f1;
+	padding: 18px 0 25px 0;
+	text-align: center;
+}
+
+
+.post .scores .commentScore {
+	background-color: #bdc3c7;
+	border-radius: 2px;
+	display: inline-block;
+	padding: 12px 17px;
+	color: #ffffff;
+	font-size: 14px;
+	font-family: 'Open Sans Bold', sans-serif;
+	position: relative;
+}
+
+.post .scores .commentScore .mark {
+	width: 11px;
+	height: 11px;
+	background-color: #bdc3c7;
+	position: absolute;
+	bottom: 0;
+	left: 43%;
+	margin-bottom: -5px;
+	transform:rotate(45deg);
+	-ms-transform:rotate(45deg); /* IE 9 */
+	-webkit-transform:rotate(45deg); /* Opera, Chrome, and Safari */
+}
+
+
+.post .vote {
+	color:#9da6aa;
+	font-size: 24px;
+	font-family: 'Open Sans Regular', sans-serif;
+	text-align: center;
+	line-height: 29px;
+}
+
+
