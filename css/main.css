@@ -125,4 +125,7 @@ h2 {
 	line-height: 29px;
 }
 
+.glyphicon {
+	cursor: pointer;
+}
 
