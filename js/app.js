@@ -1,6 +1,9 @@
 "use strict";
 
 var urlBeginning = 'https://api.parse.com/1/classes/input';
+/*$.getJSON('http://jsonip.com/?callback=?', function(r) { 
+    console.log(r.ip); 
+});*/
 
 angular.module('CommentApp', ['ui.bootstrap'])
     .config(function($httpProvider) {
@@ -31,7 +34,6 @@ angular.module('CommentApp', ['ui.bootstrap'])
 
         $scope.refreshComments();
 
-        
         //this method will validate the result to see if the comment is already on the database. If it passes, continueComment is called.
         //continueComment is the old addComment function.
         $scope.addComment = function () {
@@ -85,7 +87,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                 
                 }; 
 
-
+        //ORIGINAL CHANGESCORE FUNCTION. UNCOMMENT IF WE CANT GET IP TO WORK
         /*$scope.changeScore = function(comment, amount) {
             if (amount == 1) {
                 $scope.updateScore(comment, amount);
@@ -97,6 +99,16 @@ angular.module('CommentApp', ['ui.bootstrap'])
         };*/
 
         $scope.changeScore = function(comment, amount) {
+            var ip;
+            $.getJSON('http://jsonip.com/?callback=?', function(r) { 
+                changeWithIP(comment, amount, r.ip); 
+            });
+
+            
+        };
+
+
+        function changeWithIP(comment, amount, ip){
             $http.put(urlBeginning + '/' + comment.objectId, {
                 score: {
                     __op: 'Increment',
@@ -105,12 +117,13 @@ angular.module('CommentApp', ['ui.bootstrap'])
             })
                 .success(function (responseData) {
                     comment.score = responseData.score;
+                    console.log(ip);
                 })
                 .error(function (err) {
                     $scope.errorMessage = err;
                     console.log(err);
                 });
-        };
+        }
 
         /*$scope.deleteComment = function (comment) {
             $http.delete(urlBeginning + '/' + comment.objectId, comment)
@@ -160,6 +173,17 @@ function getUserName(){
             $('#name').val(localStorage.getItem('userName'));
         }
     });
+
+
+    /*var ip;
+    $.getJSON('http://jsonip.com/?callback=?', function(r) { 
+        myCallback(r.ip); 
+    });
+
+    function myCallback(ip){
+        // Do whatever you want with ip here.
+        console.log(ip);
+    }*/
 }
 
 
