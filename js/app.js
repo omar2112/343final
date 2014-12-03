@@ -83,7 +83,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                         $scope.form.$setPristine();
                         $scope.newComment = {
                             score: 1, 
-                            downvote: true,
+                            downvote: true
                         };
                     });
                 
@@ -133,6 +133,7 @@ $(document).ready(function() {
         getUserName();
     }
     console.log(localStorage.getItem('userName'));
+    $('#randomName').text(localStorage.getItem('userName'));
 });
 
 function getUserName(){
