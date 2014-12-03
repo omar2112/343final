@@ -1,20 +1,15 @@
 "use strict";
 
 var urlBeginning = 'https://api.parse.com/1/classes/input';
-/*$.getJSON('http://jsonip.com/?callback=?', function(r) { 
-    console.log(r.ip); 
-});*/
 
 angular.module('CommentApp', ['ui.bootstrap'])
     .config(function($httpProvider) {
         $httpProvider.defaults.headers.common['X-Parse-Application-Id'] = 'S2WiA5MuUpr4c04YWPq7Y0mTZ8tTuFO7fJP6eIQQ';
         $httpProvider.defaults.headers.common['X-Parse-REST-API-Key'] = 'LFJHXc3B5tll4AsaQPYpJ4Ni3NpeRXdKQJrBj6om';
-    	//--data-urlencode 'order=score';
     })
     .controller('AjaxController', function($scope, $http) {
         $scope.newComment = {
         	score: 0, 
-        	//downvote: true
         };
 
         $scope.refreshComments = function () {
@@ -81,7 +76,6 @@ angular.module('CommentApp', ['ui.bootstrap'])
                         $scope.form.$setPristine();
                         $scope.newComment = {
                             score: 1, 
-                            //downvote: true
                         };
                     });
                 
@@ -102,11 +96,8 @@ angular.module('CommentApp', ['ui.bootstrap'])
             var ip;
             $.getJSON('http://jsonip.com/?callback=?', function(r) { 
                 changeWithIP(comment, amount, r.ip); 
-            });
-
-            
+            });   
         };
-
 
         function changeWithIP(comment, amount, ip){
             $http.put(urlBeginning + '/' + comment.objectId, {
@@ -124,17 +115,6 @@ angular.module('CommentApp', ['ui.bootstrap'])
                     console.log(err);
                 });
         }
-
-        /*$scope.deleteComment = function (comment) {
-            $http.delete(urlBeginning + '/' + comment.objectId, comment)
-                .success(function(respData) {
-                    $scope.refreshComments();
-                })
-                .error(function (err) {
-                    $scope.errorMessage = err;
-                    console.log(err);
-                });
-        };*/
     });
 
 $(document).ready(function() {
@@ -173,17 +153,6 @@ function getUserName(){
             $('#name').val(localStorage.getItem('userName'));
         }
     });
-
-
-    /*var ip;
-    $.getJSON('http://jsonip.com/?callback=?', function(r) { 
-        myCallback(r.ip); 
-    });
-
-    function myCallback(ip){
-        // Do whatever you want with ip here.
-        console.log(ip);
-    }*/
 }
 
 
