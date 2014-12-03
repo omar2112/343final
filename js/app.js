@@ -68,6 +68,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
 
                 });           
         };
+        
 
         $scope.continueComment = function() {
             $http.post(urlBeginning, $scope.newComment)
@@ -126,6 +127,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                     console.log(err);
                 });
         };*/
+
     });
 
 $(document).ready(function() {
@@ -165,5 +167,6 @@ function getUserName(){
         }
     });
 }
+
 
 
