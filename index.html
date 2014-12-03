@@ -38,7 +38,7 @@
                     <div class="form-group">
                         <label for="name" class="col-sm-5 control-label">Assigned User Name:</label>
                         <div class="col-sm-4">
-                            <input id = "name" type = "text" name="user" value="" class="form-control" ng-model="newComment.name" readonly />
+                            <input id = "name" type = "text" name="user" value="notworking" class="form-control" ng-model="newComment.name" readonly />
                         </div>
                     </div>
 
@@ -97,7 +97,7 @@
             <div class="post" ng-repeat="comment in comments">
                 <div class="wrap-ut pull-left">
                     <div class="userName pull-left">
-                        {{comment.name}}
+                        <p>{{comment.name}}</p>
                     </div>
                     <div class="commentBody pull-left">
                         <h3>{{comment.title}}</h3>
