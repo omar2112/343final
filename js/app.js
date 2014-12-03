@@ -133,7 +133,7 @@ $(document).ready(function() {
         getUserName();
     }
     console.log(localStorage.getItem('userName'));
-    $('#randomName').text(localStorage.getItem('userName'));
+    $('#name').val(localStorage.getItem('userName'));
 });
 
 function getUserName(){

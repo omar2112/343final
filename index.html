@@ -34,8 +34,14 @@
                     </div>
                     -->
 
-                    <h3 id="randomName" class = "pull-right" ng-model="newComment.name"></h3>
-                    <h3 class = "pull-left">Assigned User Name: </h3>
+                    <!--<h3 id="randomName" class = "pull-right" ng-model="newComment.name"></h3>-->
+                    <div class="form-group">
+                        <label for="name" class="col-sm-5 control-label">Assigned User Name:</label>
+                        <div class="col-sm-4">
+                            <input id = "name" type = "text" name="user" value="" class="form-control" ng-model="newComment.name" readonly required/>
+                        </div>
+                    </div>
+
 
                     <div class="form-group">
                          <input type="text" id="comment-title" class="form-control"
