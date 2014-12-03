@@ -15,7 +15,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
     .controller('AjaxController', function($scope, $http) {
         $scope.newComment = {
         	score: 0, 
-        	downvote: true,
+        	downvote: true
         };
 
         $scope.refreshComments = function () {
@@ -35,26 +35,60 @@ angular.module('CommentApp', ['ui.bootstrap'])
 
         $scope.refreshComments();
 
+        
+        //this method will validate the result to see if the comment is already on the database. If it passes, continueComment is called.
+        //continueComment is the old addComment function.
         $scope.addComment = function () {
             $scope.loading = true;
-            $http.post(urlBeginning, $scope.newComment)
-                .success(function (responseData) {
-                    $scope.newComment.objectId = responseData.objectId;
-                    $scope.comments.push($scope.newComment);
+            $scope.temp;
+            var temp;
+
+            $http.get(urlBeginning + '?where={"comment":"' + $scope.newComment.comment + '"}') //results.length == 0 wihtin .sucess. 
+                .success(function (data) {
+                    console.log(data);
+                    $scope.temp = data.results.length;
                 })
                 .error(function (err) {
                     $scope.errorMessage = err;
                     console.log(err);
+
                 })
-                .finally(function() {
-                    $scope.form.$setPristine();
-                    $scope.newComment = {
-                    	score: 0, 
-                    	downvote: true,
-                    };
-                    $scope.loading = false;
-                })
+                .finally(function () {
+                    console.log("inside length: " + $scope.temp); 
+                    if ($scope.temp == 0) {
+                        console.log("this does work");
+                        $scope.continueComment();
+                        $scope.loading = false;
+
+                    } else {
+                        console.log("this does not work");
+                        $scope.form.$setPristine();
+                        $scope.loading = false;
+                    }
+
+                });           
         };
+
+        $scope.continueComment = function() {
+            $http.post(urlBeginning, $scope.newComment)
+                    .success(function (responseData) {
+                        $scope.newComment.objectId = responseData.objectId;
+                        $scope.comments.push($scope.newComment);
+                    })
+                    .error(function (err) {
+                        $scope.errorMessage = err;
+                        console.log(err);
+                    })
+                    .finally(function() {
+                        $scope.form.$setPristine();
+                        $scope.newComment = {
+                            score: 1, 
+                            downvote: true,
+                        };
+                    });
+                
+                }; 
+
 
         $scope.changeScore = function(comment, amount) {
             if (amount == 1) {
@@ -93,3 +127,40 @@ angular.module('CommentApp', ['ui.bootstrap'])
                 });
         };*/
     });
+
+$(document).ready(function() {
+    if(!localStorage.getItem('userName')) {
+        getUserName();
+    }
+    console.log(localStorage.getItem('userName'));
+});
+
+function getUserName(){
+    var counter = 2;
+    $.get('lib/adjectives.txt', function(data) {
+        var adjectiveLines = data.split('\n');
+        console.log(adjectiveLines);
+        console.log(Math.floor((Math.random() * (adjectiveLines.length - 1))));
+        localStorage.setItem('adjective', adjectiveLines[Math.floor((Math.random() * (adjectiveLines.length - 1)))]);
+        console.log(localStorage.getItem('adjective'));
+        counter--;
+        if(counter == 0) {
+            localStorage.setItem('userName', localStorage.getItem('adjective') + ' ' + localStorage.getItem('noun'));
+            console.log(localStorage.getItem('userName'));
+        }
+    });
+    $.get('lib/nouns.txt', function(data) {
+        var nounLines = data.split('\n');
+        console.log(nounLines);
+        console.log(Math.floor((Math.random() * (nounLines.length - 1))));
+        localStorage.setItem('noun', nounLines[Math.floor((Math.random() * (nounLines.length - 1)))]);
+        console.log(localStorage.getItem('noun'));
+        counter--;
+        if(counter == 0) {
+            localStorage.setItem('userName', localStorage.getItem('adjective') + ' ' + localStorage.getItem('noun'));
+            console.log(localStorage.getItem('userName'));
+        }
+    });
+}
+
+
