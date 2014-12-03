@@ -1,8 +1,4 @@
 "use strict";
-/*
-    app.js, main Angular application script
-    define your module and controllers here
-*/
 
 var urlBeginning = 'https://api.parse.com/1/classes/input';
 
@@ -15,7 +11,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
     .controller('AjaxController', function($scope, $http) {
         $scope.newComment = {
         	score: 0, 
-        	downvote: true
+        	//downvote: true
         };
 
         $scope.refreshComments = function () {
@@ -83,14 +79,14 @@ angular.module('CommentApp', ['ui.bootstrap'])
                         $scope.form.$setPristine();
                         $scope.newComment = {
                             score: 1, 
-                            downvote: true
+                            //downvote: true
                         };
                     });
                 
                 }; 
 
 
-        $scope.changeScore = function(comment, amount) {
+        /*$scope.changeScore = function(comment, amount) {
             if (amount == 1) {
                 $scope.updateScore(comment, amount);
             } else if (comment.score == 0 && amount == -1) {
@@ -98,9 +94,9 @@ angular.module('CommentApp', ['ui.bootstrap'])
             } else if (amount == -1 && comment.downvote) {
                 $scope.updateScore(comment, amount);
             }
-        };
+        };*/
 
-        $scope.updateScore = function(comment, amount) {
+        $scope.changeScore = function(comment, amount) {
             $http.put(urlBeginning + '/' + comment.objectId, {
                 score: {
                     __op: 'Increment',
