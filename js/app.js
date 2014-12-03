@@ -61,6 +61,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
 
                 });           
         };
+        
 
         $scope.continueComment = function() {
             $http.post(urlBeginning, $scope.newComment)
@@ -115,6 +116,21 @@ angular.module('CommentApp', ['ui.bootstrap'])
                     console.log(err);
                 });
         }
+<<<<<<< HEAD
+=======
+
+        /*$scope.deleteComment = function (comment) {
+            $http.delete(urlBeginning + '/' + comment.objectId, comment)
+                .success(function(respData) {
+                    $scope.refreshComments();
+                })
+                .error(function (err) {
+                    $scope.errorMessage = err;
+                    console.log(err);
+                });
+        };*/
+
+>>>>>>> 75534c54289cf8ee9b27210c86d39759771bea6c
     });
 
 $(document).ready(function() {
@@ -154,5 +170,6 @@ function getUserName(){
         }
     });
 }
+
 
 
