@@ -100,6 +100,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                             score: 1
                         };
                         $('#name').val(localStorage.getItem('userName'));
+                        $scope.refreshComments();
                     });
                 $('#name').val(localStorage.getItem('userName'));
                 }; 
