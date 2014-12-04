@@ -11,7 +11,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
         $scope.newComment = {
         	score: 0, 
             name: localStorage.getItem('userName'),
-            replyArray: [{name:"", reply:""}, {}]
+            replyArray: []
         };
         $('#name').val(localStorage.getItem('userName'));
 
