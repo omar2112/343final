@@ -4,7 +4,9 @@ body {
     font-family: 'Open Sans Light', 'Ubuntu', 'Helvetica Neue', 'Helvetica', sans-serif;
     font-weight: 400;
    /* background-color: rgba(85,85,85,1);*/
-	background-color: #C1CDCD;
+    background-color: #204a61;
+    background-image: url(../img/checkered-light-emboss.png);
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 	/*background-color: #F0FFFF;*/
 }
 
