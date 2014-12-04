@@ -11,11 +11,13 @@ angular.module('CommentApp', ['ui.bootstrap'])
         $scope.newComment = {
         	score: 0, 
             name: localStorage.getItem('userName'),
-            replyArray: []
+            replyArray: [{name:"", reply:""}, {}]
         };
         $('#name').val(localStorage.getItem('userName'));
 
         //$scope.replyArray;
+        $scope.userName= localStorage.getItem('userName');
+
 
         $scope.addReply = function(comment) {
             var elem = $('#reply-body');
@@ -24,7 +26,11 @@ angular.module('CommentApp', ['ui.bootstrap'])
             console.log(coolstring);
 
             console.log('reply array: ' + comment.replyArray);
-            comment.replyArray.push(coolstring);
+            var obj = {
+                name: localStorage.getItem('userName');
+                reply: coolstring;
+            }
+            comment.replyArray.push(obj);
             console.log(comment.replyArray);
 
             
