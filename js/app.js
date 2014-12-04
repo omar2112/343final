@@ -13,6 +13,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
             name: localStorage.getItem('userName'),
             replyArray: []
         };
+        $('#name').val(localStorage.getItem('userName'));
 
         $scope.addReply = function() {
             var elem = $('#reply-body');
@@ -26,6 +27,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
             $http.get(urlBeginning + "?order=-score")
                 .success(function (data) {
                     $scope.comments = data.results;
+                    $('#name').val(localStorage.getItem('userName'));
                 })
                 .error(function (err) {
                     $scope.errorMessage = err;
@@ -47,11 +49,13 @@ angular.module('CommentApp', ['ui.bootstrap'])
             $scope.temp;
             var temp;
             //console.log('teting from omar' + $scope.newComment.comment);
+            $('#name').val(localStorage.getItem('userName'));
 
             $http.get(urlBeginning + '?where={"comment":"' + $scope.newComment.comment + '"}') //results.length == 0 wihtin .sucess. 
                 .success(function (data) {
                     console.log(data);
                     $scope.temp = data.results.length;
+                    $('#name').val(localStorage.getItem('userName'));
                 })
                 .error(function (err) {
                     $scope.errorMessage = err;
@@ -71,6 +75,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                         console.log("this does not work");
                         //$scope.form.$setPristine();
                         $scope.loading = false;
+                        $('#name').val(localStorage.getItem('userName'));
                     }
                 });           
         };
@@ -82,6 +87,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                         //$scope.newComment.name = localStorage.getItem('userName');
                         //console.log(localStorage.getItem('userName'));
                         $scope.comments.push($scope.newComment);
+                        $('#name').val(localStorage.getItem('userName'));
                     })
                     .error(function (err) {
                         $scope.errorMessage = err;
@@ -89,6 +95,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                     })
                     .finally(function() {
                         //$scope.form.$setPristine();
+                        $('#name').val(localStorage.getItem('userName'));
                         $scope.newComment = {
                             score: 1
                         };
