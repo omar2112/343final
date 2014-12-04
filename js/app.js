@@ -22,18 +22,29 @@ angular.module('CommentApp', ['ui.bootstrap'])
 
 
         $scope.addReply = function(comment) {
-            var elem = $('#reply-body');
-            console.log(elem);
-            var coolstring = elem.val();
-            console.log(coolstring);
+            var elem = $('.reply-body');
 
-            console.log('reply array: ' + comment.replyArray);
+            var coolstring;
+            //$scope.varComment;
+            //console.log(coolstring);
+
+            elem.each(function(i, item) {
+                console.log(item.value);
+                if(item.value||item.value!="") {
+                    console.log('hi');
+                    coolstring = item.value;
+
+                }
+                item.value = '';
+            });
+
+            //console.log('reply array: ' + comment.replyArray);
             var obj = {
                 name: localStorage.getItem('userName'),
                 reply: coolstring
-            }
+            };
             comment.replyArray.push(obj);
-            console.log(comment.replyArray);
+            //console.log(comment.replyArray);
 
             
                    $http.put(urlBeginning + '/' + comment.objectId, {
@@ -43,6 +54,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                 //replyArray.
             })
                 .success(function (responseData) {
+
                     //$scope.replyArray = comment.replyArray;
                 })
                 .error(function (err) {
