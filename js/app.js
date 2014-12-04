@@ -27,8 +27,8 @@ angular.module('CommentApp', ['ui.bootstrap'])
 
             console.log('reply array: ' + comment.replyArray);
             var obj = {
-                name: localStorage.getItem('userName');
-                reply: coolstring;
+                name: localStorage.getItem('userName'),
+                reply: coolstring
             }
             comment.replyArray.push(obj);
             console.log(comment.replyArray);
