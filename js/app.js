@@ -33,6 +33,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                 })
                 .finally(function () {
                     $scope.loading = false;
+                    $('#name').val(localStorage.getItem('userName'));
                 });
         };
 
@@ -45,7 +46,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
             $scope.loading = true;
             $scope.temp;
             var temp;
-            console.log('teting from omar' + $scope.newComment.comment);
+            //console.log('teting from omar' + $scope.newComment.comment);
 
             $http.get(urlBeginning + '?where={"comment":"' + $scope.newComment.comment + '"}') //results.length == 0 wihtin .sucess. 
                 .success(function (data) {
@@ -63,6 +64,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                         console.log("this does work");
                         $scope.continueComment();
                         $scope.loading = false;
+                        $('#name').val(localStorage.getItem('userName'));
 
                     } else {
                         alert("you can't post the same thing twice");
