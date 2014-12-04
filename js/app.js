@@ -10,7 +10,15 @@ angular.module('CommentApp', ['ui.bootstrap'])
     .controller('AjaxController', function($scope, $http) {
         $scope.newComment = {
         	score: 0, 
-            name: localStorage.getItem('userName')
+            name: localStorage.getItem('userName'),
+            replyArray: []
+        };
+
+        $scope.addReply = function() {
+            var elem = $('#reply-body');
+            console.log(elem);
+            var coolstring = elem.val();
+            console.log(coolstring);
         };
 
         $scope.refreshComments = function () {
@@ -36,6 +44,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
             $scope.loading = true;
             $scope.temp;
             var temp;
+            console.log('teting from omar' + $scope.newComment.comment);
 
             $http.get(urlBeginning + '?where={"comment":"' + $scope.newComment.comment + '"}') //results.length == 0 wihtin .sucess. 
                 .success(function (data) {
@@ -77,7 +86,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                     .finally(function() {
                         $scope.form.$setPristine();
                         $scope.newComment = {
-                            score: 1, 
+                            score: 1
                         };
                     });
                 

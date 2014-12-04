@@ -70,12 +70,14 @@
                         </div>
                     </div>
                     <div class="clearfix"></div>
-                </div>
-                        <input type="text" id="reply-body" class="form-control" placeholder="reply body" ng-model="newReply.body"/>
-                        <div class="form-group">
-                            <button type="submit" id ="replyBtn"class="btn btn-primary"
-                                    ng-click="addReply()"> Reply </button>
-                        </div>
+                </div>  
+                        <form name="replyform" class="form-horizontal" role="form" novalidate>
+                            <input type="text" id="reply-body" class="form-control" placeholder="reply body" ng-model="newReply.body"/>
+                            <div class="form-group">
+                                <button type="submit" id ="replyBtn"class="btn btn-primary"
+                                        ng-click="addReply()"> Reply </button>
+                            </div>
+                    </form>
                     </section>
             </div>
         </main>
