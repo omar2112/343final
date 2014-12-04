@@ -67,6 +67,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                     .success(function (responseData) {
                         $scope.newComment.objectId = responseData.objectId;
                         $scope.newComment.name = localStorage.getItem('userName');
+                        console.log(localStorage.getItem('userName'));
                         $scope.comments.push($scope.newComment);
                     })
                     .error(function (err) {
