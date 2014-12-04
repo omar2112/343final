@@ -118,6 +118,7 @@ h2 {
 	transform:rotate(45deg);
 	-ms-transform:rotate(45deg); /* IE 9 */
 	-webkit-transform:rotate(45deg); /* Opera, Chrome, and Safari */
+	color: #FF0000;
 }
 
 
@@ -133,3 +134,6 @@ h2 {
 	cursor: pointer;
 }
 
+.scores {
+	color: #FF0000;
+}
