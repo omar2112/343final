@@ -4,8 +4,8 @@ var urlBeginning = 'https://api.parse.com/1/classes/input';
 
 angular.module('CommentApp', ['ui.bootstrap'])
     .config(function($httpProvider) {
-        $httpProvider.defaults.headers.common['X-Parse-Application-Id'] = 'S2WiA5MuUpr4c04YWPq7Y0mTZ8tTuFO7fJP6eIQQ';
-        $httpProvider.defaults.headers.common['X-Parse-REST-API-Key'] = 'LFJHXc3B5tll4AsaQPYpJ4Ni3NpeRXdKQJrBj6om';
+        $httpProvider.defaults.headers.common['X-Parse-Application-Id'] = 'MFVa6bsPTrjcOViE9pTjgtRS582f3l2twgWo1GzL';
+        $httpProvider.defaults.headers.common['X-Parse-REST-API-Key'] = '5xSs9vIg8vZRLezwMw1E9ydrOgqnCAxj9151SMd6';
     })
     .controller('AjaxController', function($scope, $http) {
         $scope.newComment = {
