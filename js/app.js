@@ -37,6 +37,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
         };
 
         $scope.refreshComments();
+        $('#name').val(localStorage.getItem('userName'));
 
         //this method will validate the result to see if the comment is already on the database. If it passes, continueComment is called.
         //continueComment is the old addComment function.
@@ -89,6 +90,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                         $scope.newComment = {
                             score: 1
                         };
+                        $('#name').val(localStorage.getItem('userName'));
                     });
                 $('#name').val(localStorage.getItem('userName'));
                 }; 
