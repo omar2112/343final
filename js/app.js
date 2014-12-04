@@ -10,6 +10,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
     .controller('AjaxController', function($scope, $http) {
         $scope.newComment = {
         	score: 0, 
+            name: ''
         };
 
         $scope.refreshComments = function () {
