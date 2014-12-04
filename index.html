@@ -44,33 +44,63 @@
                 </form>
             </section>
 
+
+            <!--POST-->
             <div class="post" ng-repeat="comment in comments">
-                <div class="wrap-ut pull-left">
-                    <div class="userName pull-left">
-                        <p>{{comment.name}}</p>
+                <div class="post-comment">
+                    <div class="wrap-ut pull-left">
+                        <div class="userName pull-left">
+                            <p>{{comment.name}}</p>
+                        </div>
+                        <div class="commentBody pull-left">
+                            <h3>{{comment.title}}</h3>
+                            <p>{{comment.comment}}</p>
+                        </div>
+
+                        <div class="clearfix"></div>
                     </div>
-                    <div class="commentBody pull-left">
-                        <h3>{{comment.title}}</h3>
-                        <p>{{comment.comment}}</p>
-                    </div>
-                    <div class="replyBtn">
-                        <button id="reply" class="btn btn-default">Reply</button>
+
+                    <div class="commentInfo pull-left">
+                        <div class="scores">
+                            <div class="commentScore">
+                                {{comment.score || 0}}
+                                <div class="mark"></div>
+                            </div>
+                        </div>
+                        <div class="vote">
+                            <span class="glyphicon glyphicon-thumbs-up" ng-click="changeScore(comment, 1)"><a href=""></a></span>
+                        </div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
+                <!--POST-->
 
-                <div class="commentInfo pull-left">
-                    <div class="scores">
-                        <div class="commentScore">
-                            {{comment.score || 0}}
-                            <div class="mark"></div>
+                <!-----reply-----> 
+
+                <div class="post-reply">
+                    <section class="addReplies" id="add-replies">
+                        <!-- <form name="form" class="form-horizontal" role="form" novalidate>  -->
+                        <!--<div class="form-group"> -->
+                        <input type="text" id="reply-body" class="form-control"  placeholder="reply body" ng-model="newReply.body"/>  
+                        <div class="form-group"> 
+                            <button type="submit" id ="replyBtn"class="btn btn-primary" 
+                                    ng-click="addReply()"> Reply </button> 
                         </div>
-                    </div>
-                    <div class="vote">
-                        <span class="glyphicon glyphicon-thumbs-up" ng-click="changeScore(comment, 1)"><a href=""></a></span>
-                    </div>
+                        <!--</div> -->
+                        <!--</form>  -->
+                    </section> 
+
+                    <!-----reply----->  
+                    <div class="replyPost" ng-repeat="reply in replies"> 
+                        <div class="replyBody pull-left"> 
+                            <p>{{reply.reply}}</p> 
+                        </div>  
+
+                    </div> 
                 </div>
-                <div class="clearfix"></div>
+
+                <!--reply--> 
+
             </div>
         </main>
 

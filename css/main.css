@@ -48,13 +48,15 @@ h2 {
 
 
 /*--- Post --*/
-.post {
+.post-comment {
 	background: rgba(253, 253, 240, 0.8);
 
 	border-radius: 2px;
 	box-shadow: 0 1px 2px #c9cccd;
 	margin-bottom: 20px;
 }
+
+
 
 .post .wrap-ut {
 	width: 85%;
@@ -64,6 +66,7 @@ h2 {
 	width: 15%;
 	padding: 20px 5px 10px 20px;
 }
+
 
 .post .commentBody {
 	width: 85%;
