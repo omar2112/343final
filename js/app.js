@@ -15,11 +15,33 @@ angular.module('CommentApp', ['ui.bootstrap'])
         };
         $('#name').val(localStorage.getItem('userName'));
 
-        $scope.addReply = function() {
+        //$scope.replyArray;
+
+        $scope.addReply = function(comment) {
             var elem = $('#reply-body');
             console.log(elem);
             var coolstring = elem.val();
             console.log(coolstring);
+
+            console.log('reply array: ' + comment.replyArray);
+            comment.replyArray.push(coolstring);
+            console.log(comment.replyArray);
+
+            
+                   $http.put(urlBeginning + '/' + comment.objectId, {
+                        replyArray: comment.replyArray
+                
+
+                //replyArray.
+            })
+                .success(function (responseData) {
+                    //$scope.replyArray = comment.replyArray;
+                })
+                .error(function (err) {
+                    $scope.errorMessage = err;
+                    console.log(err);
+                });   
+
         };
 
         $scope.refreshComments = function () {
