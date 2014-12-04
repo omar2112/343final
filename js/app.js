@@ -2,6 +2,8 @@
 
 var urlBeginning = 'https://api.parse.com/1/classes/input';
 
+var timer;
+
 angular.module('CommentApp', ['ui.bootstrap'])
     .config(function($httpProvider) {
         $httpProvider.defaults.headers.common['X-Parse-Application-Id'] = 'MFVa6bsPTrjcOViE9pTjgtRS582f3l2twgWo1GzL';
@@ -175,6 +177,7 @@ $(document).ready(function() {
     }
     console.log(localStorage.getItem('userName'));
     $('#name').val(localStorage.getItem('userName'));
+    //timer = window.setInterval( location.reload() , 100000);
 });
 
 function getUserName(){
