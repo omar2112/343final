@@ -19,34 +19,6 @@ angular.module('CommentApp', ['ui.bootstrap'])
             console.log(elem);
             var coolstring = elem.val();
             console.log(coolstring);
-            //$scope.newComment.replyArray.push(coolstring);
-            //var Gamescore = Parse.Object.extend("GameScore");
-            //var query = new Parse.Query(Gamescore);
-            
-            /*
-            var ref = $("#objectId");
-
-            var GameScore = Parse.Object.extend("GameScore");
-            var query = new Parse.Query(GameScore);
-            query.get(ref, {
-             success: function(gameScore) {
-                // The object was retrieved successfully.
-                gameScore.addUnique("replyArray", coolstring);
-            },
-            error: function(object, error) {
-                console.log(error);*/
-                     // The object was not retrieved successfully.
-             // error is a Parse.Error with an error code and message.
-            }
-        });
-
-
-
-            //query.get("rPq8ASYEdt", {
-             //   success: function(gameScore) {
-
-               // }
-            //})
         };
 
         $scope.refreshComments = function () {
@@ -92,6 +64,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                         $scope.loading = false;
 
                     } else {
+                        alert("you can't post the same thing twice");
                         console.log("this does not work");
                         $scope.form.$setPristine();
                         $scope.loading = false;
