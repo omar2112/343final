@@ -160,7 +160,7 @@ function getUserName(){
         if(counter == 0) {
             localStorage.setItem('userName', localStorage.getItem('adjective') + ' ' + localStorage.getItem('noun'));
             console.log(localStorage.getItem('userName'));
-            $('#name').val(localStorage.getItem('userName'));
+            //$('#name').val(localStorage.getItem('userName'));
         }
     });
     $.get('lib/nouns.txt', function(data) {
@@ -173,7 +173,7 @@ function getUserName(){
         if(counter == 0) {
             localStorage.setItem('userName', localStorage.getItem('adjective') + ' ' + localStorage.getItem('noun'));
             console.log(localStorage.getItem('userName'));
-            $('#name').val(localStorage.getItem('userName'));
+            //$('#name').val(localStorage.getItem('userName'));
         }
     });
 }
