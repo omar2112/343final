@@ -73,31 +73,33 @@
                     </div>
                     <div class="clearfix"></div>
                 </div>
+                <!--POST-->
 
                 <!-----reply-----> 
-                <section class="addReplies" id="add-replies">
-                     <form name="form" class="form-horizontal" role="form" novalidate>  
-                        <div class="form-group"> 
-                            <input type="text" id="reply-body" class="form-control"  placeholder="reply body" ng-model="newReply.body"/>  
-                                <div class="form-group"> 
-                                    <button type="submit" id ="replyBtn"class="btn btn-primary" 
-                                            ng-click="addReply()"> Reply </button> 
-                                </div>
-                        </div> 
-                    </form>  
-                </section> 
-                <!-----reply----->  
-                <!--reply--> 
-                <div class="replyPost" ng-repeat="reply in replies"> 
-                    <div class="replyBody pull-left"> 
-                        <p>{{reply.reply}}</p> 
-                    </div>  
-                    <div class="vote"> 
-                        <span class="glyphicon glyphicon-thumbs-up" ng-click="changeScore(comment, 1)"><a href=""></a></span> 
-                    </div> 
-                </div> 
-                <!--reply--> 
 
+                <div class="post-reply">
+                    <section class="addReplies" id="add-replies">
+                        <!-- <form name="form" class="form-horizontal" role="form" novalidate>  -->
+                        <!--<div class="form-group"> -->
+                        <input type="text" id="reply-body" class="form-control"  placeholder="reply body" ng-model="newReply.body"/>  
+                        <div class="form-group"> 
+                            <button type="submit" id ="replyBtn"class="btn btn-primary" 
+                                    ng-click="addReply()"> Reply </button> 
+                        </div>
+                        <!--</div> -->
+                        <!--</form>  -->
+                    </section> 
+
+                    <!-----reply----->  
+                    <div class="replyPost" ng-repeat="reply in replies"> 
+                        <div class="replyBody pull-left"> 
+                            <p>{{reply.reply}}</p> 
+                        </div>  
+
+                    </div> 
+                </div>
+
+                <!--reply--> 
 
             </div>
         </main>
