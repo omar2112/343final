@@ -66,7 +66,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                     } else {
                         alert("you can't post the same thing twice");
                         console.log("this does not work");
-                        $scope.form.$setPristine();
+                        //$scope.form.$setPristine();
                         $scope.loading = false;
                     }
                 });           
@@ -85,12 +85,12 @@ angular.module('CommentApp', ['ui.bootstrap'])
                         console.log(err);
                     })
                     .finally(function() {
-                        $scope.form.$setPristine();
+                        //$scope.form.$setPristine();
                         $scope.newComment = {
                             score: 1
                         };
                     });
-                
+                $('#name').val(localStorage.getItem('userName'));
                 }; 
 
         //ORIGINAL CHANGESCORE FUNCTION. UNCOMMENT IF WE CANT GET IP TO WORK
