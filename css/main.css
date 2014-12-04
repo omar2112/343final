@@ -10,6 +10,10 @@ body {
 	/*background-color: #F0FFFF;*/
 }
 
+#item {
+    color: rgba(255,255,255,1);
+}
+
 label {
 	font-size: 20px;
 	font-weight:  600;
