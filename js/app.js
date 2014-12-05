@@ -17,34 +17,51 @@ angular.module('CommentApp', ['ui.bootstrap'])
         };
         $('#name').val(localStorage.getItem('userName'));
 
+        //$scope.replyArray;
         $scope.userName= localStorage.getItem('userName');
+
 
         $scope.addReply = function(comment) {
             var elem = $('.reply-body');
 
             var coolstring;
+            //$scope.varComment;
+            //console.log(coolstring);
+
             elem.each(function(i, item) {
                 console.log(item.value);
                 if(item.value||item.value!="") {
                     console.log('hi');
                     coolstring = item.value;
+
                 }
                 item.value = '';
             });
+
+            //console.log('reply array: ' + comment.replyArray);
             var obj = {
                 name: localStorage.getItem('userName'),
                 reply: coolstring
             };
-            comment.replyArray.push(obj);      
-            $http.put(urlBeginning + '/' + comment.objectId, {
-                replyArray: comment.replyArray
+            comment.replyArray.push(obj);
+            //console.log(comment.replyArray);
+
+            
+                   $http.put(urlBeginning + '/' + comment.objectId, {
+                        replyArray: comment.replyArray
+                
+
+                //replyArray.
             })
                 .success(function (responseData) {
+
+                    //$scope.replyArray = comment.replyArray;
                 })
                 .error(function (err) {
                     $scope.errorMessage = err;
                     console.log(err);
                 });   
+
         };
 
         $scope.refreshComments = function () {
@@ -68,11 +85,14 @@ angular.module('CommentApp', ['ui.bootstrap'])
         $('#name').val(localStorage.getItem('userName'));
 
         //this method will validate the result to see if the comment is already on the database. If it passes, continueComment is called.
+        //continueComment is the old addComment function.
         $scope.addComment = function () {
             $scope.loading = true;
             $scope.temp;
             var temp;
+            //console.log('teting from omar' + $scope.newComment.comment);
             $('#name').val(localStorage.getItem('userName'));
+
             $http.get(urlBeginning + '?where={"comment":"' + $scope.newComment.comment + '"}') //results.length == 0 wihtin .sucess. 
                 .success(function (data) {
                     console.log(data);
@@ -95,6 +115,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                     } else {
                         alert("you can't post the same thing twice");
                         console.log("this does not work");
+                        //$scope.form.$setPristine();
                         $scope.loading = false;
                         $('#name').val(localStorage.getItem('userName'));
                     }
@@ -106,6 +127,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                     .success(function (responseData) {
                         $scope.newComment.objectId = responseData.objectId;
                         $scope.newComment.name = localStorage.getItem('userName');
+                        //console.log(localStorage.getItem('userName'));
                         $scope.comments.push($scope.newComment);
                         $('#name').val(localStorage.getItem('userName'));
                     })
@@ -114,6 +136,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
                         console.log(err);
                     })
                     .finally(function() {
+                        //$scope.form.$setPristine();
                         $('#name').val(localStorage.getItem('userName'));
                         $scope.newComment = {
                             score: 0,
@@ -125,6 +148,17 @@ angular.module('CommentApp', ['ui.bootstrap'])
                     });
                 $('#name').val(localStorage.getItem('userName'));
                 }; 
+
+        //ORIGINAL CHANGESCORE FUNCTION. UNCOMMENT IF WE CANT GET IP TO WORK
+        /*$scope.changeScore = function(comment, amount) {
+            if (amount == 1) {
+                $scope.updateScore(comment, amount);
+            } else if (comment.score == 0 && amount == -1) {
+                comment.downvote = false;
+            } else if (amount == -1 && comment.downvote) {
+                $scope.updateScore(comment, amount);
+            }
+        };*/
 
         $scope.changeScore = function(comment, amount) {
             var ip;
@@ -157,6 +191,7 @@ $(document).ready(function() {
     }
     console.log(localStorage.getItem('userName'));
     $('#name').val(localStorage.getItem('userName'));
+    //timer = window.setInterval( location.reload() , 100000);
 });
 
 function getUserName(){
@@ -171,6 +206,7 @@ function getUserName(){
         if(counter == 0) {
             localStorage.setItem('userName', localStorage.getItem('adjective') + ' ' + localStorage.getItem('noun'));
             console.log(localStorage.getItem('userName'));
+            //$('#name').val(localStorage.getItem('userName'));
         }
     });
     $.get('lib/nouns.txt', function(data) {
@@ -183,6 +219,7 @@ function getUserName(){
         if(counter == 0) {
             localStorage.setItem('userName', localStorage.getItem('adjective') + ' ' + localStorage.getItem('noun'));
             console.log(localStorage.getItem('userName'));
+            //$('#name').val(localStorage.getItem('userName'));
         }
     });
 }
