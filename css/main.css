@@ -53,10 +53,10 @@ main {
 
 
 #replies {
-	width: 95%;
-	margin-left: 20px;
-	margin-right: 20px
-	
+	/*width: 95%;*/
+	/*margin-left: 50px;*/
+	/*margin-right: 20px*/
+	float: right;
 	padding-top: 5px;
     padding-left: 7px;
     padding-bottom:0px;
@@ -175,8 +175,9 @@ h2 {
 
 
 #textbox {
-    margin-left: 50px;
-	width: 94%;
+    /*margin-left: 50px;*/
+	/*width: 94%;*/
+	/*float:right;*/
 }
 
 #replyBtn {
