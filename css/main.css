@@ -64,6 +64,7 @@ main {
 	/*margin-left: 50px;*/
     background-color: rgba(245,245,245,.65);
 	width:94%;
+	margin-bottom: 10px;
 
 	
 }
@@ -130,14 +131,14 @@ h2 {
 }
 
 .post .scores {
-	border-bottom: solid 1px #f1f1f1;
+	border-bottom: solid 2px #f1f1f1;
 	padding: 10px 0 15px 0;
 	text-align: center;
 }
 
 
 .post .scores .commentScore {
-	background-color: #bdc3c7;
+	background-color: #a1a7b0;
 	border-radius: 2px;
 	display: inline-block;
 	padding: 12px 17px;
@@ -150,7 +151,7 @@ h2 {
 .post .scores .commentScore .mark {
 	width: 11px;
 	height: 11px;
-	background-color: #bdc3c7;
+	background-color: #a1a7b0;
 	position: absolute;
 	bottom: 0;
 	left: 43%;
@@ -163,6 +164,7 @@ h2 {
 
 .post .vote {
 	color:#9da6aa;
+	border-bottom: solid 2px #f1f1f1;
 	font-size: 24px;
 	font-family: 'Open Sans Regular', sans-serif;
 	text-align: center;
@@ -177,11 +179,15 @@ h2 {
 #textbox {
     /*margin-left: 50px;*/
 	/*width: 94%;*/
-	/*float:right;*/
+	float:right;
+	margin-right: 0;
 }
+
 
 #replyBtn {
     margin-top: 10px;
+	float: right;
+	margin-right:10px;
 }
 
 #commentBody {
@@ -196,7 +202,7 @@ h2 {
     padding-bottom: 0px;
     margin: 0px;
     color: rgb(214,67,67);
-    font-size:12px;
+    font-size:15px;
 }
 
 #name {
@@ -225,3 +231,24 @@ h2 {
 #replyName {
     color: rgb(214,67,67);
 }
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.h2 {
+		font-size: 20px;
+	}
+	.container-fluid {
+		padding: 0;
+	}
+
+	.post.scores.commentScore {
+		font-size: 10px;
+		padding: 7px;
+		min-width: 35px;
+	}
+
+	.post.scores.commentScore.mark {
+		left: 36%;
+	}
+
+}
+
