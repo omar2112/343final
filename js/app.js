@@ -126,7 +126,7 @@ angular.module('CommentApp', ['ui.bootstrap'])
             $http.post(urlBeginning, $scope.newComment)
                     .success(function (responseData) {
                         $scope.newComment.objectId = responseData.objectId;
-                        //$scope.newComment.name = localStorage.getItem('userName');
+                        $scope.newComment.name = localStorage.getItem('userName');
                         //console.log(localStorage.getItem('userName'));
                         $scope.comments.push($scope.newComment);
                         $('#name').val(localStorage.getItem('userName'));
@@ -139,7 +139,9 @@ angular.module('CommentApp', ['ui.bootstrap'])
                         //$scope.form.$setPristine();
                         $('#name').val(localStorage.getItem('userName'));
                         $scope.newComment = {
-                            score: 1
+                            score: 0,
+                            name: localStorage.getItem('userName'),
+                            replyArray: []
                         };
                         $('#name').val(localStorage.getItem('userName'));
                         $scope.refreshComments();
