@@ -47,14 +47,11 @@
             <div class="post" ng-repeat="comment in comments">
                 <div class="post-comment">
                     <div class="wrap-ut pull-left">
-                        <div class="userName pull-left">
-                            <p>{{comment.name}}</p>
-                        </div>
-                        <div class="commentBody pull-left">
+                        <div id="commentBody"class="commentBody pull-left">
+                            <p id="commentName">{{comment.name}}</p>
                             <h3>{{comment.title}}</h3>
                             <p>{{comment.comment}}</p>
-                            <p id = "objectId">{{comment.objectId}}</p>
-
+                            <!--<p id = "objectId">{{comment.objectId}}</p>-->
                         </div>
 
                         <div class="clearfix"></div>
@@ -76,14 +73,14 @@
 
                 <div class="well" id="replies" ng-repeat="reply in comment.replyArray">
                     <div class="post-reply">
-                        <p>{{reply.name}}: {{reply.reply}}</p>
+                        <p>{{reply.name}}: &nbsp;{{reply.reply}}</p>
                     </div>
                 </div>
 
 
 
                         <form name="replyform" class="form-horizontal" role="form" novalidate>
-                            <input type="text" class="reply-body form-control" placeholder="reply body" ng-model="varComment"/>
+                            <input id="textbox" type="text" class="reply-body form-control" placeholder="Reply" ng-model="varComment"/>
                             <div class="form-group">
                                 <button type="submit" id ="replyBtn"class="btn btn-primary"
                                         ng-click="addReply(comment)"> Reply </button>

@@ -40,10 +40,13 @@ main {
 }
 
 #replies {
-	padding: 3px;
+	padding-top: 5px;
     padding-left: 7px;
-	margin: 7px;
+    padding-bottom:0px;
+	margin: 10px;
 	margin-left: 50px;
+    background-color: rgba(245,245,245,.65);
+
 	
 }
 /*
@@ -79,16 +82,17 @@ h2 {
 
 .post .userName {
 	width: 15%;
-	padding: 20px 5px 10px 20px;
+	padding: 0px 5px 10px 10px;
+    margin:0;
 }
 
 
 .post .commentBody {
 	width: 85%;
-	padding-right: 30px;
-	padding-top: 20px;
-	padding-bottom: 15px;
-	color: #989c9e;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 0px;
+	color: #000000;
 	font-size: 14px;
 	font-family: 'Open Sans Light', sans-serif;
 	line-height: 25px;
@@ -100,16 +104,16 @@ h2 {
 }
 
 .post h3 {
-	color: #363838;
-	font-size: 18px;
+	color: #000000;
+	font-size: 21px;
 	font-family: 'Open Sans', sans-serif;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 .post .scores {
 	border-bottom: solid 1px #f1f1f1;
-	padding: 18px 0 25px 0;
+	padding: 10px 0 15px 0;
 	text-align: center;
 }
 
@@ -151,3 +155,30 @@ h2 {
 	cursor: pointer;
 }
 
+#textbox {
+    margin-left: 50px;
+}
+
+#replyBtn {
+    margin-left: 1075px;
+    margin-top: 10px;
+}
+
+#commentBody {
+    padding-left: 10px;
+}
+
+#commentBody h3 {
+    padding-top: 0px;
+}
+
+#commentName {
+    padding-bottom: 0px;
+    margin: 0px;
+    color: rgb(214,67,67);
+    font-size:12px;
+}
+
+#name {
+    color:rgb(214,67,67);
+}
