@@ -33,11 +33,20 @@ main {
 #add-comments {
 	padding-left: 25px;
 	padding-right: 25px;
+	background-color: rgba(245,245,245,.9);
+	padding-bottom: 10px;
+	padding-top: 10px;
 }
+
 
 .submit-button {
 	margin-left: 20px;
 }
+
+#sub {
+	margin-bottom: 40px;
+}
+
 
 #replies {
 	padding-top: 5px;
@@ -46,6 +55,7 @@ main {
 	margin: 10px;
 	margin-left: 50px;
     background-color: rgba(245,245,245,.65);
+	width:90%
 
 	
 }
@@ -157,6 +167,7 @@ h2 {
 
 #textbox {
     margin-left: 50px;
+	width: 90%;
 }
 
 #replyBtn {
