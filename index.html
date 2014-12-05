@@ -35,7 +35,7 @@
         <main class="container" ng-app="CommentApp" ng-controller="AjaxController">
             <section id="item">
                 <h1>Spindrift Forums</h1>
-                <p>FORUMS ROCK, like WOW</p>
+                <p id="sub">FORUMS ROCK, like WOW</p>
             </section>
 
             <section id="add-comments" class="well">
@@ -105,7 +105,7 @@
                         <form name="replyform" class="form-horizontal" role="form" novalidate>
                             <input id="textbox" type="text" class="reply-body form-control" placeholder="Reply" ng-model="varComment"/>
                             <div class="form-group">
-                                <button type="submit" id ="replyBtn"class="btn btn-primary"
+                                <button type="submit" id ="replyBtn"class="btn btn-primary pull right"
                                         ng-click="addReply(comment)"> Reply </button>
                             </div>
                     </form>

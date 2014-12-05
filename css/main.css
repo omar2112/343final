@@ -10,6 +10,10 @@ body {
 	/*background-color: #F0FFFF;*/
 }
 
+h1 {
+	margin-top: 10px;
+}
+
 #item {
      color: rgba(255,255,255,1);
 }
@@ -171,7 +175,6 @@ h2 {
 }
 
 #replyBtn {
-    margin-left: 1075px;
     margin-top: 10px;
 }
 
