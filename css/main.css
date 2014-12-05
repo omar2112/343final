@@ -182,3 +182,22 @@ h2 {
 #name {
     color:rgb(214,67,67);
 }
+
+#rules {
+    margin-left: 100px;
+    margin-right: 100px;
+    font-size: 20px;
+}
+
+#rules dt {
+    font-size: 27px;
+}
+
+#rules dd{
+    margin-bottom: 10px;
+}
+
+#ruleHeader {
+    font-size: 100px;
+    color: rgb(255,255,255);
+}
