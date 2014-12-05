@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>FORUM AWESOME</title>
+        <title>Spindrift</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
     </head>
@@ -90,7 +90,7 @@
 
                 <div class="well" id="replies" ng-repeat="reply in comment.replyArray">
                     <div class="post-reply">
-                        <p>{{reply.name}}: &nbsp;{{reply.reply}}</p>
+                        <p><strong id="replyName">{{reply.name}}</strong>: &nbsp;{{reply.reply}}</p>
                     </div>
                 </div>
 

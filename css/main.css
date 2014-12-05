@@ -221,3 +221,7 @@ h2 {
     font-size: 100px;
     color: rgb(255,255,255);
 }
+
+#replyName {
+    color: rgb(214,67,67);
+}
