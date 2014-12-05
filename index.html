@@ -6,6 +6,7 @@
         <title>Spindrift</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="icon" href="img/icon.png">
     </head>
 
     <body>
@@ -17,13 +18,12 @@
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.html">Forum<span class="sr-only">(current)</span></a></li>
                         <li><a href="rules.html">Rules</a></li>
                     </ul>
-
-                </div><!-- /.navbar-collapse -->
+                <!--</div>&lt;!&ndash; /.navbar-collapse &ndash;&gt;-->
             </div><!-- /.container-fluid -->
         </nav>
         <main class="container" ng-app="CommentApp" ng-controller="AjaxController">
@@ -105,8 +105,11 @@
                                     ng-click="addReply(comment) pull-right"> Reply </button>
                         </div>
                     </form>
-
             </div>
+            <footer>
+                <p><a href="#top">Back to Top &uarr;</a></p>
+                <p>&copy; 2014, Proudly created by Tin Ho, Jacob Leighty, Omar Rojas, Jia Zeng.</p>
+            </footer>
         </main>
 
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

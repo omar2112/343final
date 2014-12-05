@@ -65,8 +65,11 @@ main {
     background-color: rgba(245,245,245,.65);
 	width:94%;
 	margin-bottom: 10px;
+}
 
-	
+a:link,
+a:visited {
+	color: #ADD8E6;
 }
 /*
 rating {
@@ -76,7 +79,6 @@ rating {
 
 
 h2 {
-	margin-left: 10px;
 	margin-bottom: 20px;
 	font-size: 40px;
 	font-weight: 200;
@@ -203,6 +205,7 @@ h2 {
     margin: 0px;
     color: rgb(214,67,67);
     font-size:15px;
+	font-weight: 700;
 }
 
 #name {
@@ -232,16 +235,34 @@ h2 {
     color: rgb(214,67,67);
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-	.h2 {
-		font-size: 20px;
-	}
+footer {
+	text-align: center;
+	color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
 	.container-fluid {
 		padding: 0;
 	}
 
-	.post.scores.commentScore {
-		font-size: 10px;
+	h2 {
+		font-size: 30px;
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
+
+	.post h3 {
+		font-size: 20px;
+	}
+
+	label {
+		font-size: 15px;
+	}
+
+
+
+	.post .scores .commentScore {
+		font-size: 15px;
 		padding: 7px;
 		min-width: 35px;
 	}
