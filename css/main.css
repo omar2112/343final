@@ -3,11 +3,8 @@
 body {
     font-family: 'Open Sans Light', 'Ubuntu', 'Helvetica Neue', 'Helvetica', sans-serif;
     font-weight: 400;
-   /* background-color: rgba(85,85,85,1);*/
     background-color: #204a61;
     background-image: url(../img/checkered-light-emboss.png);
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-	/*background-color: #F0FFFF;*/
 }
 
 h1 {
@@ -53,15 +50,10 @@ main {
 
 
 #replies {
-	/*width: 95%;*/
-	/*margin-left: 50px;*/
-	/*margin-right: 20px*/
 	float: right;
 	padding-top: 5px;
     padding-left: 7px;
     padding-bottom:0px;
-	/*margin: 10px;*/
-	/*margin-left: 50px;*/
     background-color: rgba(245,245,245,.65);
 	width:94%;
 	margin-bottom: 10px;
@@ -71,12 +63,6 @@ a:link,
 a:visited {
 	color: #ADD8E6;
 }
-/*
-rating {
-	padding-left: 20px;
-}
-*/
-
 
 h2 {
 	margin-bottom: 20px;
@@ -84,7 +70,6 @@ h2 {
 	font-weight: 200;
 	color: #505050;
 }
-
 
 /*--- Post --*/
 .post-comment {
@@ -95,8 +80,6 @@ h2 {
 	margin-bottom: 20px;
 }
 
-
-
 .post .wrap-ut {
 	width: 85%;
 }
@@ -106,7 +89,6 @@ h2 {
 	padding: 0px 5px 10px 10px;
     margin:0;
 }
-
 
 .post .commentBody {
 	width: 85%;
@@ -138,7 +120,6 @@ h2 {
 	text-align: center;
 }
 
-
 .post .scores .commentScore {
 	background-color: #a1a7b0;
 	border-radius: 2px;
@@ -163,7 +144,6 @@ h2 {
 	-webkit-transform:rotate(45deg); /* Opera, Chrome, and Safari */
 }
 
-
 .post .vote {
 	color:#9da6aa;
 	border-bottom: solid 2px #f1f1f1;
@@ -177,10 +157,7 @@ h2 {
 	cursor: pointer;
 }
 
-
 #textbox {
-    /*margin-left: 50px;*/
-	/*width: 94%;*/
 	float:right;
 	margin-right: 0;
 }
@@ -258,8 +235,6 @@ footer {
 	label {
 		font-size: 15px;
 	}
-
-
 
 	.post .scores .commentScore {
 		font-size: 15px;
